@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>e-chop App</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+    header { background-color: #4CAF50; color: white; text-align: center; padding: 1em; }
+    .content { padding: 20px; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+    .nav-item {
+      flex-grow: 1;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #4CAF50;
+      cursor: pointer;
+    }
+    .nav-item.active { background-color: #e8f5e9; font-weight: bold; }
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 15px 0;
+      padding: 15px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .order-btn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AGRI NATURE PLUS</h1>
+    <p>Snacks 100% naturels</p>
+  </header>
+
+  <div class="content">
+    <div id="home" class="tab-content active">
+      <h2>Bienvenue</h2>
+      <p>Découvrez nos snacks naturels et locaux.</p>
+    </div>
+
+    <div id="products" class="tab-content">
+      <h2>Nos Produits</h2>
+      <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sweet_potato_chips.jpg/640px-Sweet_potato_chips.jpg" alt="Chips Patate Douce">
+        <h3>Chips Patate Douce</h3>
+        <p>100% naturelles, croustillantes et locales.</p>
+        <a class="order-btn" href="https://wa.me/2290194999521?text=Bonjour%2C%20je%20veux%20commander%20les%20Chips%20Patate%20Douce." target="_blank">Commander</a>
+      </div>
+      <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Plantain_chips.jpg/640px-Plantain_chips.jpg" alt="Chips Plantain">
+        <h3>Chips Plantain</h3>
+        <p>Délicieuses et sans conservateurs.</p>
+        <a class="order-btn" href="https://wa.me/2290194999521?text=Bonjour%2C%20je%20veux%20commander%20les%20Chips%20Plantain." target="_blank">Commander</a>
+      </div>
+      <div class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Potato_chips.jpg/640px-Potato_chips.jpg" alt="Chips Pomme de Terre">
+        <h3>Chips Pomme de Terre</h3>
+        <p>Goût classique, croustillantes et naturelles.</p>
+        <a class="order-btn" href="https://wa.me/2290194999521?text=Bonjour%2C%20je%20veux%20commander%20les%20Chips%20Pomme%20de%20Terre." target="_blank">Commander</a>
+      </div>
+    </div>
+
+    <div id="orders" class="tab-content">
+      <h2>Commandes</h2>
+      <p>Commandez directement via WhatsApp en 1 clic.</p>
+    </div>
+
+    <div id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>Besoin d'aide ou d'infos ? Contactez-nous :</p>
+      <a class="order-btn" href="https://wa.me/2290194999521" target="_blank">Écrire sur WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item active" onclick="showTab('home', this)">🏠 Accueil</div>
+    <div class="nav-item" onclick="showTab('products', this)">🛒 Produits</div>
+    <div class="nav-item" onclick="showTab('orders', this)">📦 Commandes</div>
+    <div class="nav-item" onclick="showTab('contact', this)">📞 Contact</div>
+  </div>
+
+  <script>
+    function showTab(tabId, el) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>
